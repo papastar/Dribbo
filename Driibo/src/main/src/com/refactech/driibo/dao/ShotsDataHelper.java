@@ -2,7 +2,7 @@
 package com.refactech.driibo.dao;
 
 import com.refactech.driibo.type.dribble.Category;
-import com.refactech.driibo.type.dribble.Shot;
+import com.refactech.driibo.type.dribble.Item;
 import com.refactech.driibo.util.database.Column;
 import com.refactech.driibo.util.database.SQLiteTable;
 
@@ -33,30 +33,30 @@ public class ShotsDataHelper extends BaseDataHelper {
         return DataProvider.SHOTS_CONTENT_URI;
     }
 
-    private ContentValues getContentValues(Shot shot) {
+    private ContentValues getContentValues(Item shot) {
         ContentValues values = new ContentValues();
-        values.put(ShotsDBInfo.ID, shot.getId());
+        values.put(ShotsDBInfo.ID, shot.id);
         values.put(ShotsDBInfo.CATEGORY, mCategory.ordinal());
         values.put(ShotsDBInfo.JSON, shot.toJson());
         return values;
     }
 
-    public Shot query(long id) {
-        Shot shot = null;
+    public Item query(long id) {
+        Item shot = null;
         Cursor cursor = query(null, ShotsDBInfo.CATEGORY + "=?" + " AND " + ShotsDBInfo.ID + "= ?",
                 new String[] {
                         String.valueOf(mCategory.ordinal()), String.valueOf(id)
                 }, null);
         if (cursor.moveToFirst()) {
-            shot = Shot.fromCursor(cursor);
+            shot = Item.fromCursor(cursor);
         }
         cursor.close();
         return shot;
     }
 
-    public void bulkInsert(List<Shot> shots) {
+    public void bulkInsert(List<Item> shots) {
         ArrayList<ContentValues> contentValues = new ArrayList<ContentValues>();
-        for (Shot shot : shots) {
+        for (Item shot : shots) {
             ContentValues values = getContentValues(shot);
             contentValues.add(values);
         }

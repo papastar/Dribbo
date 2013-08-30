@@ -74,7 +74,7 @@ public class LoadingFooter {
                 break;
             case TheEnd:
                 mLoadingText.setVisibility(View.VISIBLE);
-                mLoadingText.animate().withLayer().alpha(1).setDuration(mAnimationDuration);
+                mLoadingText.animate().alpha(1).setDuration(mAnimationDuration);
                 mProgress.setVisibility(View.GONE);
                 break;
             default:

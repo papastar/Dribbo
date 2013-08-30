@@ -1,10 +1,10 @@
 <resources>
+
     <!-- Application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light">
         <item name="android:windowBackground">@drawable/main_bg</item>
         <item name="android:actionBarStyle">@style/ActionbarStyle</item>
         <item name="android:actionOverflowButtonStyle">@style/ActionbarOverFlowStyle</item>
-
         <item name="bg_listitem_shot">@drawable/listitem_shot_selector</item>
         <item name="ic_view">@drawable/ic_view</item>
         <item name="ic_like">@drawable/ic_like</item>
@@ -23,4 +23,44 @@
     <style name="ActionbarOverFlowStyle" parent="@android:style/Widget.Holo.ActionButton.Overflow">
         <item name="android:src">@drawable/ic_action_overflow</item>
     </style>
+
+    <style name="username_text_light">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/listitem_gray</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="content_text_light">
+        <item name="android:textSize">16.5sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:lineSpacingExtra">1.5dip</item>
+    </style>
+
+    <style name="btn_support_light">
+        <item name="android:textSize">16.5sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/button_vote_light</item>
+        <item name="android:minWidth">60.0dip</item>
+        <item name="android:drawableLeft">@drawable/button_smile_light</item>
+        <item name="android:drawablePadding">3.0dip</item>
+    </style>
+
+    <style name="btn_against_light">
+        <item name="android:textSize">16.5sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/button_vote_light</item>
+        <item name="android:minWidth">60.0dip</item>
+        <item name="android:drawableLeft">@drawable/button_cry_light</item>
+        <item name="android:drawablePadding">3.0dip</item>
+    </style>
+
+       <style name="btn_comment_light">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/button_comment_light</item>
+    </style>
+    
 </resources>
